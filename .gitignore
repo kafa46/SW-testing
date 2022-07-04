@@ -1,4 +1,5 @@
-.vscode
-.pytest_cache
-venv
+__pycache__
 .notebook
+.pytest_cache
+.vscode
+venv
