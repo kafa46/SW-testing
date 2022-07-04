@@ -5,4 +5,4 @@ We deal with two approaches.
 
 ## The directory structure
 - unitest: related files to Youtube is here [python unittest](./01_python_builtin_unittest_practice/)
-- pytest: related files to Youtube is here [python unittest](./02_pytest_practice/)
+- pytest: related files to Youtube is here [python pytest](./02_pytest_practice/)
