@@ -5,10 +5,9 @@
 '''
 
 import random
-import pytest
 from cart import Cart
 
-PRICE_TABLE = {
+p_table = {
     'apple': 300,
     'orange': 200,
     'strawberry': 500,
@@ -17,10 +16,10 @@ PRICE_TABLE = {
 def test_max_number_limit():
     '''Test the max number of allowed items into shopping cart'''
 
-    cart = Cart(max_number= 5, price_table=PRICE_TABLE)
+    cart = Cart(max_number= 5)
 
     for _ in range(cart.max_number):
-        item_choice = random.choice(list(cart.price_table.keys()))
+        item_choice = random.choice(list(p_table.keys()))
         cart.add(item_choice)
 
     cart.add('apple')

@@ -14,15 +14,14 @@ The shopping cart has five requirements as follows:
         4. One can verify the total cost of items in the cart.
 '''
 
-from typing import Dict, List
+from typing import List
 
 class Cart:
     '''Class for shopping cart'''
 
-    def __init__(self, max_number: int, price_table: Dict) -> None:
+    def __init__(self, max_number: int) -> None:
         self.items: List[str] = []
         self.max_number = max_number
-        self.price_table = price_table
 
 
     def add(self, item:str) -> None:
@@ -37,7 +36,7 @@ class Cart:
         return len(self.items)
 
 
-    def get_total_price(self, ) -> int:
+    def get_total_price(self, price_table) -> int:
         '''Get total price of all items
         in the shopping cart
         '''
@@ -47,7 +46,10 @@ class Cart:
         #     total_price += self.price_table.get(item)
         # return total_price
 
-        return sum([total_price + self.price_table[item] for item in self.items])
+        # return sum([total_price + price_table[item] for item in self.items])
+        # return sum([total_price + price_table[item]*2 for item in self.items])
+        return sum([total_price + price_table.get(item) for item in self.items])
+        
 
 
 if __name__=='__main__':
@@ -60,10 +62,10 @@ if __name__=='__main__':
         'strawberry': 500,
     }
 
-    cart = Cart(max_number=5, price_table=p_table)
+    cart = Cart(max_number=5)
     cart.add('apple')
     cart.add('orange')
     cart.add('orange')
 
     print(f'Number of items: {cart.get_number_of_items()}')
-    print(f'Total price: {cart.get_total_price()}' )
+    print(f'Total price: {cart.get_total_price(price_table=p_table)}')
