@@ -22,6 +22,5 @@ def test_max_number_limit():
     for _ in range(cart.max_number):
         item_choice = random.choice(list(cart.price_table.keys()))
         cart.add(item_choice)
-    # cart.add('apple')
-    with pytest.raises(OverflowError('Cannot add more than limit')):
-        cart.add('apple')
+
+    cart.add('apple')

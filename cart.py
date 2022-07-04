@@ -27,7 +27,6 @@ class Cart:
 
     def add(self, item:str) -> None:
         '''Add one item into empty shopping cart'''
-        # if len(self.items) >= self.max_number:
         if self.get_number_of_items() >= self.max_number:
             raise OverflowError(f'Cannot add more than max_size {self.max_number}')
         self.items.append(item)
@@ -35,7 +34,7 @@ class Cart:
 
     def get_number_of_items(self,) -> int:
         '''Get the number of items in shopping cart'''
-        return len(self.items) - 1
+        return len(self.items)
 
 
     def get_total_price(self, ) -> int:
